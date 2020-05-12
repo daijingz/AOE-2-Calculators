@@ -1,10 +1,10 @@
 // Author: Jingze Dai
 // Email Address: david1147062956@163.com
-// Date: 11/05/2020
+// Date: 12/05/2020
 public class Fight {
     Result Melee_duel(Soldier Yourself, Soldier Target){
-        double defeat_You = Attack_Times(Yourself.Get_Hit(),Target.Get_Attack());
-        double defeat_Enemy = Attack_Times(Target.Get_Hit(),Yourself.Get_Attack());
+        double defeat_You = Attack_Times(Yourself.Get_Hit(),Target.Get_Attack() - Yourself.Get_Armour());
+        double defeat_Enemy = Attack_Times(Target.Get_Hit(),Yourself.Get_Attack() - Target.Get_Armour());
         if (defeat_You > defeat_Enemy){
             return Result.Win;
         } else if (defeat_You == defeat_Enemy){
@@ -15,14 +15,16 @@ public class Fight {
     }
 
     Result Ranged_duel(Soldier Yourself, Soldier Target){
-        double defeat_You = Attack_Times(Yourself.Get_Hit(),Target.Get_Attack());
-        double defeat_Enemy = Attack_Times(Target.Get_Hit(),Yourself.Get_Attack());
+        double defeat_You = Attack_Times(Yourself.Get_Hit(),Target.Get_Attack() - Yourself.Get_Shield());
+        double defeat_Enemy = Attack_Times(Target.Get_Hit(),Yourself.Get_Attack() - Yourself.Get_Shield());
         int difference_Range = Yourself.Get_Range() - Target.Get_Range();
+
         if (difference_Range > 0){
             defeat_You += (int)(difference_Range/3) + 1;
         } else if (difference_Range < 0){
             defeat_You -= (int)(difference_Range/3) + 1;
         }
+
         if (defeat_You > defeat_Enemy){
             return Result.Win;
         } else if (defeat_You == defeat_Enemy){

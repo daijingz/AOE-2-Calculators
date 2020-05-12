@@ -1,8 +1,8 @@
 "Age of Empire 2: Definitive Edition" Game Stimulator
 
 Author: Jingze Dai
-Version: 0.0.5
-Date: 2020-05-11
+Version: 0.0.7
+Date: 2020-05-12
 
 This package is for simulating "Age of Empire 2: Definitive Editions" gaming functions.
 Current version Function:
@@ -10,3 +10,10 @@ Current version Function:
 @Group(Club): Soldiers can join in an army, which helps them to fight together. This army's name can be different, and people can join it, and its capacity can be extended.
 
 For improvements, contact David at david1147062956@163.com
+
+New update:
+@Army now have country name in the information
+@Army can add new group members, and new group can delete members
+@New part: Shield and armour values are added to calculation
+@New methods for adjust inputs
+@New Area: Soldier's type (initially 3 types)
