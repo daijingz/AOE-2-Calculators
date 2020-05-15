@@ -1,8 +1,8 @@
 "Age of Empire 2: Definitive Edition" Game Stimulator
 
 Author: Jingze Dai
-Version: 0.0.7
-Date: 2020-05-12
+Version: 0.1.0
+Date: 2020-05-15
 
 This package is for simulating "Age of Empire 2: Definitive Editions" gaming functions.
 Current version Function:
@@ -12,8 +12,6 @@ Current version Function:
 For improvements, contact David at david1147062956@163.com
 
 New update:
-@Army now have country name in the information
-@Army can add new group members, and new group can delete members
-@New part: Shield and armour values are added to calculation
-@New methods for adjust inputs
-@New Area: Soldier's type (initially 3 types)
+@Junit Test: Now all methods in this has been justified by Junit test. See another package called "Test AOE2 Project files" in the Github repo.
+@Add more exceptions to cover mroe errors.
+@Making Improvements on the coding structure.

@@ -1,6 +1,3 @@
-// Author: Jingze Dai
-// Email Address: david1147062956@163.com
-// Date: 12/05/2020
 public class Input_Output {
     Soldier Create_Soldier(String Line){
         String Name = Line.split(" ")[0];
@@ -9,20 +6,20 @@ public class Input_Output {
         int Range = Integer.parseInt(Line.split(" ")[3]);
         int Armour = Integer.parseInt(Line.split(" ")[4]);
         int Shield = Integer.parseInt(Line.split(" ")[5]);
-        return new Soldier(Name, Hit, Attack, Range, Armour, Shield);
+        double Speed = Double.parseDouble(Line.split(" ")[6]);
+        return new Soldier(Name, Hit, Attack, Range, Armour, Shield, Speed);
     }
 
     int Get_Sum(String Input){
-        String New_String = Input.replace("+", " ");
         if (!Input.contains("+")){
-            throw new IllegalArgumentException("Input Error: Unrecognized ");
-        } else {
-            String[] argument = Input.split(" ");
-            int sum = 0;
-            for(int i = 0; i < argument.length; i++){
-                sum += Integer.parseInt(argument[i]);
-            }
-            return sum;
+            throw new IllegalArgumentException("Input Error: Unrecognized Input!!!");
         }
+        String New_String = Input.replace("+", " ");
+        String[] argument = New_String.split(" ");
+        int sum = 0;
+        for (String s : argument) {
+            sum += Integer.parseInt(s);
+        }
+        return sum;
     }
 }
