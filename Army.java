@@ -1,12 +1,12 @@
 import java.util.Arrays;
-public class Army {
+class Army {
     private String Army_Name;
     private String Country;
     private String[] Member_List;
 
     Army (String Army_Name, String Country){
         this.Army_Name = Army_Name;
-        this.Member_List = new String[100];
+        this.Member_List = new String[50];
         Arrays.fill(this.Get_Member_List(), "");
         this.Country = Country;
     }
@@ -31,8 +31,8 @@ public class Army {
 
     void Add_Member(String Member){
         int count = 0;
-        for(int i = 0; i <this.Member_List.length; i++){
-            if (!this.Member_List[i].equals("")){
+        for (String s : this.Member_List) {
+            if (!s.equals("")) {
                 count += 1;
             }
         }
@@ -60,6 +60,21 @@ public class Army {
             }
             this.Member_List = New_Array;
         }
+    }
+
+    void Extend_Army(int extend_amount){
+        if (this.Get_Member_List().length + extend_amount > 200){
+            throw new IllegalArgumentException("Failure: Exceeded maximum capacity restriction: 200!!!");
+        }
+        String[] New_Army_List = new String[this.Get_Member_List().length + extend_amount];
+        for (int i = 0; i < this.Get_Member_List().length + extend_amount; i++){
+            if(i < this.Get_Member_List().length){
+                New_Army_List[i] = this.Get_Member_List()[i];
+            } else {
+                New_Army_List[i] = "";
+            }
+        }
+        this.Member_List = New_Army_List;
     }
 
     private boolean Includes(Army Group, String Name){

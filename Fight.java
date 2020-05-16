@@ -1,8 +1,28 @@
-
 public class Fight {
     Result Melee_duel(Soldier Yourself, Soldier Target){
         double defeat_You = Attack_Times(Yourself.Get_Hit(),Target.Get_Attack() - Yourself.Get_Armour());
         double defeat_Enemy = Attack_Times(Target.Get_Hit(),Yourself.Get_Attack() - Target.Get_Armour());
+        if (defeat_You > defeat_Enemy){
+            return Result.Win;
+        } else if (defeat_You == defeat_Enemy){
+            return Result.Not_Win_Not_Fail;
+        } else {
+            return Result.Fail;
+        }
+    }
+
+    Result Mixed_duel(Soldier Yourself, Soldier Target){
+        double defeat_You, defeat_Enemy;
+        boolean Yourself_is_Ranger= Check_Soldier_Type(Yourself) == Soldier_Type.Ranger;
+        if (Yourself_is_Ranger){
+            defeat_You = Attack_Times(Yourself.Get_Hit(),Target.Get_Attack() - Yourself.Get_Armour());
+            defeat_Enemy = Attack_Times(Target.Get_Hit(),Yourself.Get_Attack() - Yourself.Get_Shield());
+            defeat_Enemy = defeat_Enemy - ((int)(Yourself.Get_Range()/3) + 1);
+        } else {
+            defeat_You = Attack_Times(Yourself.Get_Hit(),Target.Get_Attack() - Yourself.Get_Shield());
+            defeat_Enemy = Attack_Times(Target.Get_Hit(),Yourself.Get_Attack() - Yourself.Get_Armour());
+            defeat_You = defeat_You - ((int)(Target.Get_Range()/3) + 1);
+        }
         if (defeat_You > defeat_Enemy){
             return Result.Win;
         } else if (defeat_You == defeat_Enemy){

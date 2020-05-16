@@ -1,8 +1,8 @@
 "Age of Empire 2: Definitive Edition" Game Stimulator
 
 Author: Jingze Dai
-Version: 0.1.0
-Date: 2020-05-15
+Version: 0.1.1
+Date: 2020-05-16
 
 This package is for simulating "Age of Empire 2: Definitive Editions" gaming functions.
 Current version Function:
@@ -12,6 +12,7 @@ Current version Function:
 For improvements, contact David at david1147062956@163.com
 
 New update:
-@Junit Test: Now all methods in this has been justified by Junit test. See another package called "Test AOE2 Project files" in the Github repo.
-@Add more exceptions to cover mroe errors.
-@Making Improvements on the coding structure.
+@Mixed duel: New methods for Calculating fights between rangers and non-rangers
+@Now Army can extend the capacity!!! (Maximum capacity 200)
+@Initial Army capacity has been reduced to 50 (In AOE2, you can only command 50 people once)
+@Civilization (represent country economics system) begins to develop!
