@@ -22,4 +22,17 @@ public class Input_Output {
         }
         return sum;
     }
+
+    void Print_Soldier_Identity(Soldier Input){
+        System.out.println("******************************");
+        System.out.println("Soldier Information: ");
+        System.out.println("Soldier Name: " + Input.Get_Name());
+        System.out.println("Hit Point: " + Input.Get_Hit());
+        System.out.println("Attack: " + Input.Get_Attack());
+        System.out.println("Range: " + Input.Get_Range());
+        System.out.println("Armour: " + Input.Get_Armour());
+        System.out.println("Shield: " + Input.Get_Shield());
+        System.out.println("Speed: " + Input.Get_Speed());
+        System.out.println("******************************");
+    }
 }

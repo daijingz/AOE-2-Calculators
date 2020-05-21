@@ -3,12 +3,14 @@ class Army {
     private String Army_Name;
     private String Country;
     private String[] Member_List;
+    private String Leader;
 
-    Army (String Army_Name, String Country){
+    Army (String Army_Name, String Country, String Leader){
         this.Army_Name = Army_Name;
         this.Member_List = new String[50];
         Arrays.fill(this.Get_Member_List(), "");
         this.Country = Country;
+        this.Leader = Leader;
     }
 
     String Get_Army_Name(){
@@ -24,6 +26,10 @@ class Army {
     }
 
     String Get_Country() { return this.Country; }
+
+    String Get_Leader() {
+        return this.Leader;
+    }
 
     void Change_Army_Name(String New_Name){
         this.Army_Name = New_Name;

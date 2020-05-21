@@ -42,20 +42,58 @@ public class Soldier {
     void change_Name(String Name){
         if (Name.length() == 0){
             throw new IllegalArgumentException("Error: New selected name must be non-empty!!!");
+        } else if (Name.contains("&") || Name.contains("*")){
+            throw new IllegalArgumentException();
         }
         this.Name = Name;
     }
 
-    void Print_Identity(Soldier Input){
-        System.out.println("******************************");
-        System.out.println("Soldier Information: ");
-        System.out.println("Soldier Name: " + Input.Get_Name());
-        System.out.println("Hit Point: " + Input.Get_Hit());
-        System.out.println("Attack: " + Input.Get_Attack());
-        System.out.println("Range: " + Input.Get_Range());
-        System.out.println("Armour: " + Input.Get_Armour());
-        System.out.println("Shield: " + Input.Get_Shield());
-        System.out.println("Speed: " + Input.Get_Speed());
-        System.out.println("******************************");
+    void change_Hit(int Hit){
+        if (Hit == 0){
+            throw new IllegalArgumentException("Error: No changes can be made!!!");
+        } else if (this.Hit_Point + Hit < 0){
+            throw new IllegalArgumentException("Error: This amount is unavailable on changing");
+        }
+        this.Hit_Point = this.Hit_Point + Hit;
+    }
+
+    void change_Attack(int Attack){
+        if (Attack == 0){
+            throw new IllegalArgumentException("Error: No changes can be made!!!");
+        } else if (this.Attack + Attack < 0) {
+            throw new IllegalArgumentException("Error: This amount is unavailable on changing");
+        }
+        this.Attack = this.Attack + Attack;
+    }
+
+    void change_Range(int range){
+        if (range == 0){
+            throw new IllegalArgumentException("Error: No changes can be made!!!");
+        } else if (this.range + range < 0){
+            throw new IllegalArgumentException("Error: This amount is unavailable on changing");
+        }
+        this.range = this.range + range;
+    }
+
+    void change_Armour(int Armour){
+        if (Armour == 0){
+            throw new IllegalArgumentException("Error: No changes can be made!!!");
+        } else if (this.armour + Armour < 0){
+            throw new IllegalArgumentException("Error: This amount is unavailable on changing");
+        }
+        this.armour = this.armour + Armour;
+    }
+
+    void change_Shield(int shield){
+        if (shield == 0){
+            throw new IllegalArgumentException("Error: No changes can be made!!!");
+        } else if (this.shield + shield < 0){
+            throw new IllegalArgumentException("Error: This amount is unavailable on changing");
+        }
+        this.shield = this.shield + shield;
+    }
+
+    void change_Speed(double Speed){
+        this.speed = this.speed + Speed;
     }
 }
