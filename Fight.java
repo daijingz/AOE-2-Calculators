@@ -1,4 +1,4 @@
-public class Fight {
+class Fight {
     Result Melee_duel(Soldier Yourself, Soldier Target){
         double defeat_You = Attack_Times(Yourself.Get_Hit(),Target.Get_Attack() - Yourself.Get_Armour());
         double defeat_Enemy = Attack_Times(Target.Get_Hit(),Yourself.Get_Attack() - Target.Get_Armour());
@@ -52,6 +52,32 @@ public class Fight {
         }
     }
 
+    Result Laugh(Soldier Yourself, Soldier Target){
+        int Score_You = 0;
+        int Score_Target = 0;
+        if (Yourself.Get_Name().replace(" ", "").length() < Target.Get_Name().
+                replace(" ", "").length()){
+            Score_You += 1;
+        } else if (Yourself.Get_Name().replace(" ", "").length() > Target.Get_Name().
+                replace(" ", "").length()) {
+            Score_Target += 1;
+        }
+
+        if (Uppercase_Times(Yourself) > Uppercase_Times(Target)){
+            Score_You += 1;
+        } else if (Uppercase_Times(Yourself) < Uppercase_Times(Target)) {
+            Score_Target += 1;
+        }
+
+        if (Score_You > Score_Target){
+            return Result.Win;
+        } else if (Score_You == Score_Target){
+            return Result.Not_Win_Not_Fail;
+        } else {
+            return Result.Fail;
+        }
+    }
+
     Soldier_Type Check_Soldier_Type(Soldier Input){
         if (Input.Get_Range() > 3){
             return Soldier_Type.Ranger;
@@ -62,6 +88,17 @@ public class Fight {
         } else {
             return Soldier_Type.Warrior;
         }
+    }
+
+    private int Uppercase_Times(Soldier Input){
+        char[] charArray = Input.Get_Name().toCharArray();
+        int count = 0;
+        for (char c : charArray) {
+            if (Character.isUpperCase(c)) {
+                count++;
+            }
+        }
+        return count;
     }
 
     private int Attack_Times(int Int1, int Int2){

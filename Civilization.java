@@ -7,13 +7,13 @@ public class Civilization {
     private Villager_Jobs[] Villager_List;
     private int relics;
 
-    Civilization(String Name, int Lumber, int food_Storage, int Gold, int Stone_Storage){
+    Civilization(String Name, int Lumber, int food_Storage, int Gold, int Stone_Storage, int limit_Villager){
         this.Name = Name;
         this.Lumber = Lumber;
         this.food_Storage = food_Storage;
         this.Gold = Gold;
         this.Stone_Storage = Stone_Storage;
-        this.Villager_List = new Villager_Jobs[]{};
+        this.Villager_List = new Villager_Jobs[limit_Villager];
         this.relics = 0;
     }
 
@@ -83,11 +83,11 @@ public class Civilization {
             Target.Change_Food(Food);
         }
         if (Gold != 0){
-            this.Change_Gold((-1)*(int)Donation_Rate(tech_Level)*Gold);
+            this.Change_Gold((int)((-1)*Donation_Rate(tech_Level)*Gold));
             Target.Change_Gold(Gold);
         }
         if (Stone != 0){
-            this.Change_Stone((-1)*(int)Donation_Rate(tech_Level)*Stone);
+            this.Change_Stone((int)((-1)*Donation_Rate(tech_Level)*Stone));
             Target.Change_Stone(Stone);
         }
     }

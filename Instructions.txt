@@ -1,16 +1,22 @@
 "Age of Empire 2: Definitive Edition" Game Stimulator
 
 Author: Jingze Dai
-Version: 0.1.2
-Date: 2020-05-21
+Version: 0.1.5
+Date: 2020-05-26
 
 This package is for simulating "Age of Empire 2: Definitive Editions" gaming functions.
 Current version Function:
 @Duel: Giving two soldiers, one is your friend, another is your enemy. Calculate who will win the battle with various kinds of soldiers with different weapons.
-@Group(Club): Soldiers can join in an army, which helps them to fight together. This army's name can be different, and people can join it, and its capacity can be extended.
+@Military Group(Army): Soldiers can join in an army, which helps them to fight together. This army's name can be different, and people can join it, and its capacity can be extended.
+@Civilization: Representation of a country (a player controls it), including this country's economic system calculations.
 
 For improvements, contact David at david1147062956@163.com
 
 New update:
-@Civilization donation: Sending resources to other civilizations!!!
-@Army Includes Hero as Leader!!!
+@Laugh: A new kind of fights: two Soldiers have a "month duel", one Soldier laughs at another soldier's name, and for here are rules of laugh:
+*If a person have shorter name then he has larger advantages.
+*If a person's name have more words then he has larger advantages.
+
+@Army: Now in the memberlist accept soldier objects.
+
+@A lot of member improvements on methods.
